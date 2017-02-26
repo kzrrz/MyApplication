@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PerreraMpal</string>
+    <string name="bienvenida_str">Bienvenido a la aplicación de la Perrera Municipal: </string>
 </resources>
