@@ -14,5 +14,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@string/bienvenida_str" />
+        android:text="@string/bienvenida_str"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView android:id="@+id/DescripTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/BienvenidaTxt"
+        android:layout_centerHorizontal="true"
+        android:text="@string/descripcionStr"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <TextView android:id="@+id/SelectOpTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/DescripTxt"
+        android:layout_centerHorizontal="true"
+        android:text="@string/selectOpStr"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    <Button android:id="@+id/listaAdopBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SelectOpTxt"
+        android:text="@string/listaAdopStr"/>
+
+    <Button android:id="@+id/reportBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listaAdopBtn"
+        android:text="@string/reportStr"	/>
+    <Button android:id="@+id/tallerBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reportBtn"
+        android:text="@string/talleresStr"/>
+
 </RelativeLayout>
