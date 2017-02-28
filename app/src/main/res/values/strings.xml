@@ -2,7 +2,7 @@
     <string name="app_name">PerreraMpal</string>
     <string name="encabezadoMenuPpal">Anim.al</string>
     <string name="bienvenida_str">Bienvenido: </string>
-    <string name="descripcionStr">Aplicación de la perrera municipal de Morelia</string>
+    <string name="descripcionStr">Perrera municipal de Morelia</string>
     <string name="selectOpStr">Seleccione una opción: </string>
     <string name="reportStr">Levantar un reporte</string>
     <string name="listaAdopStr">Listas de adopción</string>

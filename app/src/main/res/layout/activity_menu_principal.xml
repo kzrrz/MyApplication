@@ -37,17 +37,23 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/SelectOpTxt"
+        android:onClick="ListaAdopcionCambioAct"
         android:text="@string/listaAdopStr"/>
 
     <Button android:id="@+id/reportBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/listaAdopBtn"
+        android:onClick="LevReportCambioAct"
         android:text="@string/reportStr"	/>
+
     <Button android:id="@+id/tallerBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/reportBtn"
-        android:text="@string/talleresStr"/>
+        android:text="@string/talleresStr"
+        android:layout_below="@+id/reportBtn"
+        android:onClick="TallerCursoCambioAct"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
