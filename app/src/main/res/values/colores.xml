@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primario">#6A27B0</color> <!-- Color de la barra superior -->
+    <color name="pimarioOscuro">#6A1B9A</color> <!-- Color barra de tareas (hora, notif, etc) -->
+    <color name="colorNegro">#000000</color>
+    <color name="barraSupColor">#121212</color>
+    <color name="fondo">#161616</color>
+    <color name="claroColor">#AFAFFF</color>
+    <color name="colorBlanco">#CBCECB</color>
+
+</resources>

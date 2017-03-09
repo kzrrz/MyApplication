@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lsc.perrerampal.SplashActivity">
+
+    <TextView android:id="@+id/SplashText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/SplashText"
+        android:textSize="55sp"
+        android:textColor="@color/colorBlanco"
+        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteX="84dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
+
+    <ImageView android:id="@+id/LogoMpalIntro"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src=""
+        tools:layout_editor_absoluteY="295dp"
+        tools:layout_editor_absoluteX="80dp"
+        android:layout_above="@+id/LogoAplicacion"
+        android:layout_alignLeft="@+id/LogoAplicacion"
+        android:layout_alignStart="@+id/LogoAplicacion" />
+
+    <ImageView android:id="@+id/LogoAplicacion"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src=""
+        tools:layout_editor_absoluteY="95dp"
+        tools:layout_editor_absoluteX="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp" />
+
+
+</RelativeLayout>

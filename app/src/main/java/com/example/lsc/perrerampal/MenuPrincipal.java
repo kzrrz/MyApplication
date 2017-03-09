@@ -1,18 +1,23 @@
 package com.example.lsc.perrerampal;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class MenuPrincipal extends AppCompatActivity {
 
+    //Acciones del menú principal
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
+
     }
 
+    //Funciones para los onClick de los botones del menú principal.
     public void ListaAdopcionCambioAct(View v){ //Paso de actividad a los listados de adopción
         Intent i = new Intent (MenuPrincipal.this, ListaAdopcion.class);
         startActivity(i);
@@ -27,4 +32,5 @@ public class MenuPrincipal extends AppCompatActivity {
         Intent i = new Intent(MenuPrincipal.this, TalleresCursosActivity.class);
         startActivity(i);
     }
+
 }

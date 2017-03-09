@@ -10,50 +10,64 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.lsc.perrerampal.MenuPrincipal">
 
-    <TextView android:id="@+id/BienvenidaTxt"
+    <TextView
+        android:id="@+id/BienvenidaTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:textColor="@color/colorBlanco"
         android:text="@string/bienvenida_str"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-    <TextView android:id="@+id/DescripTxt"
+    <TextView
+        android:id="@+id/DescripTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/BienvenidaTxt"
         android:layout_centerHorizontal="true"
+        android:textColor="@color/colorBlanco"
         android:text="@string/descripcionStr"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
-    <TextView android:id="@+id/SelectOpTxt"
+    <TextView
+        android:id="@+id/SelectOpTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/DescripTxt"
         android:layout_centerHorizontal="true"
+        android:textColor="@color/colorBlanco"
         android:text="@string/selectOpStr"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-    <Button android:id="@+id/listaAdopBtn"
+    <Button
+        android:id="@+id/listaAdopBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/SelectOpTxt"
         android:onClick="ListaAdopcionCambioAct"
-        android:text="@string/listaAdopStr"/>
+        android:text="@string/listaAdopStr"
+        android:textColor="@color/colorBlanco"
+        android:layout_below="@+id/SelectOpTxt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <Button android:id="@+id/reportBtn"
+    <Button
+        android:id="@+id/reportBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/listaAdopBtn"
         android:onClick="LevReportCambioAct"
-        android:text="@string/reportStr"	/>
+        android:textColor="@color/colorBlanco"
+        android:text="@string/reportStr" />
 
-    <Button android:id="@+id/tallerBtn"
+    <Button
+        android:id="@+id/tallerBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/talleresStr"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/reportBtn"
         android:onClick="TallerCursoCambioAct"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textColor="@color/colorBlanco"
+        android:text="@string/talleresStr" />
 
 </RelativeLayout>
