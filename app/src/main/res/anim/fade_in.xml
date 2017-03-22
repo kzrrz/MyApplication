@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Animación "Fade In" para el texto del Splash Screen -->
+<!-- Nota: Este archivo tiene que nombrarse con minúsculas, caso contrario el java no lo reconoce -->
+
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true" >
+
+    <alpha
+        android:duration="1000"
+        android:fromAlpha="0.0"
+        android:interpolator="@android:anim/accelerate_interpolator"
+        android:toAlpha="1.0" />
+
+</set>
