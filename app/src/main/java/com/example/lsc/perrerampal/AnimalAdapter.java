@@ -14,7 +14,7 @@ import java.util.List;
  */
 
 public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalViewHolder> {
-//:V
+//:V :V
 private List<animal> items;
 
 public static class AnimalViewHolder extends RecyclerView.ViewHolder {
