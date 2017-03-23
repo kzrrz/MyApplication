@@ -14,13 +14,7 @@ import java.util.List;
  */
 
 public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalViewHolder> {
-/*
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_adopcion)
 
-    }*/
 private List<animal> items;
 
 public static class AnimalViewHolder extends RecyclerView.ViewHolder {
