@@ -54,4 +54,3 @@ public static class AnimalViewHolder extends RecyclerView.ViewHolder {
         viewHolder.descripcion.setText("Descripción: "+String.valueOf(items.get(i).getVisitas()));
     }
 }
-
