@@ -11,7 +11,6 @@ import java.util.List;
 
 /**
  * Created by jesus on 23/03/2017.
- * :V
  */
 
 public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalViewHolder> {
