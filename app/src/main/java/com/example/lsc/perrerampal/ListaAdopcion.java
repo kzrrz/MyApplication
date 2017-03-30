@@ -9,21 +9,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/*
+CLASE ListaAdopcion en el cual  se implementa el recyclerView y el Cardview para la galeria mediante un administrador, aqui se
+  obtiene la informacion de cada taller y la imagen del taller
+*/
+
 public class ListaAdopcion extends AppCompatActivity {
 
     //Se declaran los recycler necesarios
-    private RecyclerView recycler;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager lManager;
+    private RecyclerView recycler;//se declara un recyvler view para la galeria
+    private RecyclerView.Adapter adapter;//se declara un adaptador para la galeria
+    private RecyclerView.LayoutManager lManager;//se declara un administrador para que junte el RecyclerView y el Cardview en la galeria
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_adopcion);
+        setContentView(R.layout.activity_lista_adopcion);//se liga con el xml de la clase JAVA ListaAdopcion (QUE ES ESTA)
 
-        // Inicializar lista de animales
-        List items = new ArrayList();
+        // Se inicializar el arreglo para la lista de animales que aparecerán en la galeria
 
+        List items = new ArrayList();//se declara la lista de items (animales)
+
+        //se agregan los talleres a la lista antes declarada
         items.add(new animal(R.drawable.perro01, "Firulais", "Es muy cariñoso "));
         items.add(new animal(R.drawable.perro02, "Daisy", "Es juguetón"));
         items.add(new animal(R.drawable.perro03, "Toby", "Es muy peligroso XD"));
@@ -41,15 +48,15 @@ public class ListaAdopcion extends AppCompatActivity {
         items.add(new animal(R.drawable.perro15, "Bamby", "Tiene doctorado"));
         items.add(new animal(R.drawable.perro16, "Africa", "Especialista en ladrar fuerte"));
 
-// Obtener el Recycler
+// Se obtiene el recycler view (se declaró al principio) el cual es un xml, mediante su id (reciclador)
         recycler = (RecyclerView) findViewById(R.id.reciclador);
         recycler.setHasFixedSize(true);
 
-// Usar un administrador para LinearLayout
+// Se usa un administrador (se declaró al principio) para LinearLayout de la galeria de animales
         lManager = new LinearLayoutManager(this);
         recycler.setLayoutManager(lManager);
 
-// Crear un nuevo adaptador
+// Se crea un nuevo adaptador (se declaró al principio) para juntar el recyclerview con los cardview
         adapter = new AnimalAdapter(items);
         recycler.setAdapter(adapter);
     }
