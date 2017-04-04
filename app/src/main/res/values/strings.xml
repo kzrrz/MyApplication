@@ -8,4 +8,26 @@
     <string name="reportStr">Levantar un reporte</string>
     <string name="listaAdopStr">Listas de adopción</string>
     <string name="talleresStr">Talleres y cursos</string>
+    <string name="SelecReportTxt">Seleccione el tipo de reporte a levantar:</string>
+    <string-array name="reportesArray">
+        <item>Seleccione una opción</item>
+        <item>Perro agresor</item>
+        <item>Perro abandonado</item>
+        <item>Perro perdido</item>
+        <item>Perro en situación de calle</item>
+        <item>Perro enfermo</item>
+        <item>Cadaver</item>
+        <item>Maltrato animal</item>
+    </string-array>
+    <string name="ubicActual">GPS</string>
+    <string name="arrowRep">---></string>
+    <string name="lugRepHint">Lugar del reporte</string>
+    <string name="repDescHint">Descripción</string>
+    <string name="nombreRepHint">Nombre de quien reporta</string>
+    <string name="telContactHint">Teléfono de contacto</string>
+    <string name="gpsStr">Usando ubicación actual</string>
+    <string name="sendRep">Enviar reporte</string>
+    <string name="borrarStr">Borrar campos</string>
+    <string name="alertBorrarCampos">¿Estás seguro de borrar todos los campos?</string>
+    <string name="alertBorrarCamposExt">Esta acción retornará todos los campos a su estado original.</string>
 </resources>

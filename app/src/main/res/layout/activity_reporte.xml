@@ -10,4 +10,163 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.lsc.perrerampal.ReporteActivity">
 
+
+
+    <TextView
+        android:id="@+id/selecReporteTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="69dp"
+        android:text="@string/SelecReportTxt"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlanco"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/reportSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/selecReporteTV"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/textViewRep1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/reportSpinner"
+        android:layout_marginTop="38dp"
+        android:text=""
+        android:textColor="@color/colorBlanco"/>
+
+    <TextView
+        android:id="@+id/textViewRep2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:text=""
+        android:textColor="@color/colorBlanco"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textViewRep3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewRep4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="56dp"
+        android:text=""
+        android:textColor="@color/colorBlanco" />
+
+    <TextView
+        android:id="@+id/textViewRep4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="104dp"
+        android:text=""
+        android:textColor="@color/colorBlanco" />
+
+    <EditText
+        android:id="@+id/lugarRepEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewRep1"
+        android:layout_alignBottom="@+id/textViewRep2"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:shadowColor="@color/colorBlanco"
+        android:hint="@string/lugRepHint"
+        android:textColorHint="@color/colorBlanco"
+        android:textAppearance="@android:style/TextAppearance.Holo.Medium.Inverse"
+        android:textColor="@color/colorBlanco" />
+
+    <EditText
+        android:id="@+id/descripcionRepEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:shadowColor="@color/colorBlanco"
+        android:hint="@string/repDescHint"
+        android:textColorHint="@color/colorBlanco"
+        android:textAppearance="@android:style/TextAppearance.Holo.Medium.Inverse"
+        android:textColor="@color/colorBlanco"
+        android:layout_alignBottom="@+id/textViewRep2"
+        android:layout_alignLeft="@+id/lugarRepEditText"
+        android:layout_alignStart="@+id/lugarRepEditText" />
+
+    <EditText
+        android:id="@+id/nombreRepEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:shadowColor="@color/colorBlanco"
+        android:hint="@string/nombreRepHint"
+        android:textColorHint="@color/colorBlanco"
+        android:textAppearance="@android:style/TextAppearance.Holo.Medium.Inverse"
+        android:textColor="@color/colorBlanco"
+        android:layout_above="@+id/textViewRep3"
+        android:layout_alignLeft="@+id/descripcionRepEditText"
+        android:layout_alignStart="@+id/descripcionRepEditText" />
+
+    <EditText
+        android:id="@+id/telContactoEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:shadowColor="@color/colorBlanco"
+        android:hint="@string/telContactHint"
+        android:textColorHint="@color/colorBlanco"
+        android:textAppearance="@android:style/TextAppearance.Holo.Medium.Inverse"
+        android:textColor="@color/colorBlanco"
+        android:layout_above="@+id/textViewRep4"
+        android:layout_alignLeft="@+id/nombreRepEditText"
+        android:layout_alignStart="@+id/nombreRepEditText" />
+
+    <Button
+        android:id="@+id/ubicacionBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="@string/ubicActual"
+        android:layout_alignBottom="@+id/textViewRep1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/envioReporteBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sendRep"
+        android:layout_below="@+id/textViewRep3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/borrarBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/borrarStr"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
 </RelativeLayout>
