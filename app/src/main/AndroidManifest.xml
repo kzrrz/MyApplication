@@ -8,9 +8,7 @@
         android:label="@string/encabezadoMenuPpal"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MenuPrincipal">
-
-        </activity>
+        <activity android:name=".MenuPrincipal" />
         <activity android:name=".ListaAdopcion" />
         <activity android:name=".ReporteActivity" />
         <activity android:name=".TalleresCursosActivity" />
@@ -21,6 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Taller_detalle" />
+        <activity android:name=".Animal_detalle"></activity>
     </application>
 
 </manifest>

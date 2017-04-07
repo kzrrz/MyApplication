@@ -57,7 +57,7 @@ public class ListaAdopcion extends AppCompatActivity {
         recycler.setLayoutManager(lManager);
 
 // Se crea un nuevo adaptador (se declaró al principio) para juntar el recyclerview con los cardview
-        adapter = new AnimalAdapter(items);
+        adapter = new AnimalAdapter(items, this);//se agrego this para la vista individual del animal
         recycler.setAdapter(adapter);
     }
     }

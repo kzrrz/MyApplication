@@ -10,27 +10,27 @@ package com.example.lsc.perrerampal;
 
 public class animal {
     //campos que tendrá cada animal en su cardview
-    private int imagen;
-    private String nombre;
-    private String descripcion;
+    private int imagen_animal;
+    private String nombre_animal;
+    private String descripcion_animal;
 
     //se declara un constructor para los animales
     public animal(int imagen, String nombre, String descripcion) {
-        this.imagen = imagen;
-        this.nombre = nombre;
-        this.descripcion= descripcion;
+        this.imagen_animal = imagen;
+        this.nombre_animal = nombre;
+        this.descripcion_animal= descripcion;
     }
 
     //se retornan la informacion de los animales
-    public String getNombre() {
-        return nombre;
+    public String getNombre_animal() {
+        return nombre_animal;
     }
 
-    public String getVisitas() {
-        return descripcion;
+    public String getDescripcion_animal() {
+        return descripcion_animal;
     }
 
-    public int getImagen() {
-        return imagen;
+    public int getImagen_animal() {
+        return imagen_animal;
     }
 }
