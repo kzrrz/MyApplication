@@ -1,10 +1,13 @@
 package com.example.lsc.perrerampal;
 
+import android.animation.Animator;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -60,6 +63,26 @@ public class TallerAdapter extends RecyclerView.Adapter<TallerAdapter.TallerView
     public TallerAdapter(List<taller> items,Context ctx) {
         this.items = items;
         this.ctx = ctx;//PARA DETALLE
+    }
+
+    @Override//SUPERPONE LA ANIMACION CIRCULAR REVEAL A LA GALERIA PARA PODER VISUALIZAR LA ANIMACION
+    public void onViewAttachedToWindow (TallerViewHolder viewHolder){
+        super.onViewAttachedToWindow(viewHolder);
+        animateCircularReveal(viewHolder.itemView);
+    }
+    //METODO PARA LA ANIMACION CIRCULAR REVEAL
+    public void animateCircularReveal (View view){
+
+        if (Build.VERSION.SDK_INT >=21){//SE DECLARA UN IF PARA PARA QUE REALICE LA ANIMACION SI LA API ES IGUAL O MAYOR  21, SI LA API EN INFERIOR NO HACE LA ANIMACION
+
+            int centerX = 0;
+            int centerY = 0;
+            int startRadius = 0;
+            int endRadius = Math.max(view.getWidth(), view.getHeight());
+            Animator animation = ViewAnimationUtils.createCircularReveal(view, centerX, centerY, startRadius, endRadius);
+            view.setVisibility(View.VISIBLE);
+            animation.start();
+        }
     }
 
     @Override
