@@ -19,17 +19,13 @@ public class ReporteActivity extends ActionBarActivity {
     //Declaraciones
     String opc;
     Button enviarBtn, borrarBtn, gpsBtn;
-    TextView msgTV, tV1, tV2, tV3, tV4;
+    TextView msgTV;
     EditText campo1, campo2, campo3, campo4;
     Spinner spn;
     ArrayAdapter<CharSequence> adapter;
 
     //Funciones:
-    void camposVisibles(){ //Activa la edición de los campos EditText y hace visibles los Hints.
-        tV1.setText(getString(R.string.arrowRep));
-        tV2.setText(getString(R.string.arrowRep));
-        tV3.setText(getString(R.string.arrowRep));
-        tV4.setText(getString(R.string.arrowRep));
+    void camposVisibles(){ //Activa la edición de los campos EditText y hace visibles los Hints.msg
         campo1.setHint(getString(R.string.lugRepHint));
         campo2.setHint(getString(R.string.repDescHint));
         campo3.setHint(getString(R.string.nombreRepHint));
@@ -39,10 +35,6 @@ public class ReporteActivity extends ActionBarActivity {
     }
 
     void camposNoVisibles(){ //Desactiva los campos, no se puede ingresar texto en los EditText.
-        tV1.setText("");
-        tV2.setText("");
-        tV3.setText("");
-        tV4.setText("");
         campo1.setHint(""); campo1.setFocusable(false);
         campo2.setHint(""); campo2.setFocusable(false);
         campo3.setHint(""); campo3.setFocusable(false);
@@ -50,7 +42,7 @@ public class ReporteActivity extends ActionBarActivity {
     }
 
     void borraCampos(){ //Borra el texto existente en los campos (los Hints permanecen)
-        campo1.setText(""); itallicDesactivado(); campo1.setHint(""); //Reestablecer el hint por si se queda activado el del botón "GPS"
+        campo1.setText(""); itallicDesactivado(); campo1.setHint(R.string.lugRepHint); //Reestablecer el hint por si se queda activado el del botón "GPS"
         campo2.setText("");
         campo3.setText("");
         campo4.setText("");
@@ -86,11 +78,16 @@ public class ReporteActivity extends ActionBarActivity {
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // Código para el onClick del Cancelar
+                // No hacer nada :v
             }
         });
         //Crear la alerta con la información que ya le dimos y ordenarle que la muestre
         builder.create();
         builder.show();
+    }
+
+    //Procedimiento para cuando el usuario quiere usar su ubicación actual.
+    protected void obtenerUbicación(){
     }
 
     @Override
@@ -102,9 +99,7 @@ public class ReporteActivity extends ActionBarActivity {
         enviarBtn = (Button) findViewById(R.id.envioReporteBtn);
         borrarBtn = (Button) findViewById(R.id.borrarBtn);
         gpsBtn = (Button) findViewById(R.id.ubicacionBtn);
-        msgTV = (TextView) findViewById(R.id.selecReporteTV); tV1 = (TextView) findViewById(R.id.textViewRep1);
-                tV2 =(TextView) findViewById(R.id.textViewRep2); tV3 = (TextView) findViewById(R.id.textViewRep3);
-                tV4 = (TextView) findViewById(R.id.textViewRep4);
+        msgTV = (TextView) findViewById(R.id.selecReporteTV);
         campo1 = (EditText) findViewById(R.id.lugarRepEditText); campo2 = (EditText) findViewById(R.id.descripcionRepEditText);
                 campo3 = (EditText) findViewById(R.id.nombreRepEditText); campo4 = (EditText) findViewById(R.id.telContactoEditText);
         spn = (Spinner) findViewById(R.id.reportSpinner);
@@ -116,6 +111,7 @@ public class ReporteActivity extends ActionBarActivity {
 
         camposNoVisibles();
 
+        //Spinner y sus elementos
         spn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -155,7 +151,7 @@ public class ReporteActivity extends ActionBarActivity {
                         Toast.makeText(getApplicationContext(), "Reporte de cadaver", Toast.LENGTH_SHORT).show();
                             camposVisibles();
                         break;
-                    case 7: //maltrato animal
+                    case 7:
                         Toast.makeText(getApplicationContext(), "Reporte de maltrato animal", Toast.LENGTH_SHORT).show();
                             camposVisibles();
                         break;
@@ -169,10 +165,13 @@ public class ReporteActivity extends ActionBarActivity {
                     }
                 });
 
+                //Evento onClick del botón "ubicación actual"
                 gpsBtn.setOnClickListener(new View.OnClickListener() { //Evento del botón "GPS"
                     @Override
                     public void onClick(View view) {
                         //Obtener ubicación actual
+
+
                         Toast.makeText(getApplicationContext(), "Obteniendo ubicación actual", Toast.LENGTH_SHORT).show();
                         itallicActivado();
                         campo1.setHint(getString(R.string.gpsStr));

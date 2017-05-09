@@ -31,8 +31,7 @@
         android:textColor="@color/colorBlanco"
         android:text="@string/descripcionStr"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:layout_marginTop="66dp"
-        android:layout_below="@+id/BienvenidaTxt"
+        android:layout_below="@+id/imageView2"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -49,33 +48,42 @@
         android:id="@+id/listaAdopBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/SelectOpTxt"
         android:onClick="ListaAdopcionCambioAct"
         android:text="@string/listaAdopStr"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_below="@+id/reportBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/reportBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/listaAdopBtn"
         android:onClick="LevReportCambioAct"
         android:text="@string/reportStr"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_below="@+id/tallerBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/tallerBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/reportBtn"
         android:onClick="TallerCursoCambioAct"
         android:text="@string/talleresStr"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/SelectOpTxt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logocontrolcanino"
+        android:layout_below="@+id/BienvenidaTxt"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

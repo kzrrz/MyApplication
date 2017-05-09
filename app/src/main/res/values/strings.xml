@@ -19,8 +19,7 @@
         <item>Cadaver</item>
         <item>Maltrato animal</item>
     </string-array>
-    <string name="ubicActual">GPS</string>
-    <string name="arrowRep">---></string>
+    <string name="ubicActual">Ubic. Actual</string>
     <string name="lugRepHint">Lugar del reporte</string>
     <string name="repDescHint">Descripción</string>
     <string name="nombreRepHint">Nombre de quien reporta</string>
@@ -29,5 +28,5 @@
     <string name="sendRep">Enviar reporte</string>
     <string name="borrarStr">Borrar campos</string>
     <string name="alertBorrarCampos">¿Estás seguro de borrar todos los campos?</string>
-    <string name="alertBorrarCamposExt">Esta acción retornará todos los campos a su estado original.</string>
+    <string name="alertBorrarCamposExt">Esto dejará todos los campos en blanco.</string>
 </resources>

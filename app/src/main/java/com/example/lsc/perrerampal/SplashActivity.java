@@ -1,4 +1,4 @@
-package com.example.lsc.perrerampal;
+ package com.example.lsc.perrerampal;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -16,7 +16,6 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
 
         //Código para el Splash Intro
         new Handler().postDelayed(new Runnable() {
