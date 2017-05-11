@@ -104,5 +104,4 @@ public class TallerAdapter extends RecyclerView.Adapter<TallerAdapter.TallerView
         viewHolder.nombre_taller.setText(""+String.valueOf(items.get(i).getNombre_taller()));
         viewHolder.descripcion_taller.setText(""+String.valueOf(items.get(i).getDescripcion_taller()));
     }
-
 }

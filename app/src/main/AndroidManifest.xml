@@ -21,6 +21,13 @@
         </activity>
         <activity android:name=".Taller_detalle" />
         <activity android:name=".Animal_detalle"></activity>
+
+        <service android:name=".notificacionFirebase">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

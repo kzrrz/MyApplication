@@ -1,0 +1,104 @@
+{
+  "project_info": {
+    "project_number": "1078829399840",
+    "firebase_url": "https://perreratest.firebaseio.com",
+    "project_id": "perreratest",
+    "storage_bucket": "perreratest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078829399840:android:cff9821ab71bf47a",
+        "android_client_info": {
+          "package_name": "com.example.jesus.prueba_talleres_perrera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078829399840-g9a8moa7j44vihtsmup640m63qeg5bti.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM5VnKNJwEt087UxoIdi5IPa4ig7KLrBc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078829399840:android:48ba66f96e97d44c",
+        "android_client_info": {
+          "package_name": "com.example.jesus.prueba_notificacion_perrera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078829399840-g9a8moa7j44vihtsmup640m63qeg5bti.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM5VnKNJwEt087UxoIdi5IPa4ig7KLrBc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078829399840:android:dcffdf14ac9d2473",
+        "android_client_info": {
+          "package_name": "com.example.lsc.perrerampal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078829399840-g9a8moa7j44vihtsmup640m63qeg5bti.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM5VnKNJwEt087UxoIdi5IPa4ig7KLrBc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
