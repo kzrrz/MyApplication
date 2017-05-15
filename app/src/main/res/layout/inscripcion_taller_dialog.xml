@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:padding="5dp">
+
+    <TextView
+        android:id="@+id/tituloInscripTallerTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/insTallDialStr"
+        android:textColor="@color/colorBlanco"
+        android:textSize="25sp"
+        android:textStyle="bold|italic" />
+
+    <EditText
+        android:id="@+id/nombreSolTallEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="Nombre" />
+
+    <EditText
+        android:id="@+id/apellidosSolTallEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="Apellidos" />
+
+    <EditText
+        android:id="@+id/dirSolTallEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="Dirección" />
+
+    <EditText
+        android:id="@+id/telSolTallEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="Número de teléfono"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/emailSolTallEdit"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="Correo Electronico" />
+
+    <Button
+        android:id="@+id/inscripTallerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Inscribirse"/>
+</LinearLayout>

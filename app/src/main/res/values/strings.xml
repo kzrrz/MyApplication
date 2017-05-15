@@ -37,5 +37,6 @@
     <string name="alertBorrarCampos">¿Estás seguro de borrar todos los campos?</string>
     <string name="alertBorrarCamposExt">Esto dejará todos los campos en blanco.</string>
     <string name="inscripStr">Inscribirse al taller</string>
+    <string name="insTallDialStr">Inscribir Taller</string>
     <string name="adopStr">¡Adoptar!</string>
 </resources>
