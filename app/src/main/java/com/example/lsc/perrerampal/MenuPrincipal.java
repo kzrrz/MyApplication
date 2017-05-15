@@ -20,13 +20,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
-
 import java.util.ArrayList;
 import java.util.List;
-//:v
+import static android.R.attr.onClick;
 
 public class MenuPrincipal extends AppCompatActivity {
 
@@ -35,6 +34,7 @@ public class MenuPrincipal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
+
     }
 
     //Funciones para los onClick de los botones del menú principal.
@@ -53,5 +53,11 @@ public class MenuPrincipal extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void aboutOnClick(View v){
+        Intent i = new Intent (MenuPrincipal.this, About.class);
+        startActivity(i);
+    }
+
 
 }
+

@@ -8,6 +8,7 @@
     <string name="reportStr">Levantar un reporte</string>
     <string name="listaAdopStr">Listas de adopción</string>
     <string name="talleresStr">Talleres y cursos</string>
+    <string name="aboutStr">Acerca de esta aplicación</string>
     <string name="SelecReportTxt">Seleccione el tipo de reporte a levantar:</string>
     <string-array name="reportesArray">
         <item>Seleccione una opción</item>
@@ -19,14 +20,22 @@
         <item>Cadaver</item>
         <item>Maltrato animal</item>
     </string-array>
+    <string name="about1Str">Desarrollado por los alumnos del 8vo semestre de la Licenciatura en Sistemas Computacionales de la UNLA:</string>
+    <string name="about2Str">Israel Zamora López y Jesús Coronado Esteban Camilo</string>
+    <string name="about3Str">Para el departamento de control animal del H. Ayto. De Morelia.</string>
+    <string name="about4Str">¡Apoya a este proyecto en su GitHub!</string>
     <string name="ubicActual">Ubic. Actual</string>
     <string name="lugRepHint">Lugar del reporte</string>
     <string name="repDescHint">Descripción</string>
     <string name="nombreRepHint">Nombre de quien reporta</string>
     <string name="telContactHint">Teléfono de contacto</string>
     <string name="gpsStr">Usando ubicación actual</string>
+    <string name="activGPS">Activar ubicación por GPS</string>
+    <string name="descrpGPSStr">Para poder usar su ubicación actual se requiere que active los servicios de ubicación.</string>
     <string name="sendRep">Enviar reporte</string>
     <string name="borrarStr">Borrar campos</string>
     <string name="alertBorrarCampos">¿Estás seguro de borrar todos los campos?</string>
     <string name="alertBorrarCamposExt">Esto dejará todos los campos en blanco.</string>
+    <string name="inscripStr">Inscribirse al taller</string>
+    <string name="adopStr">¡Adoptar!</string>
 </resources>

@@ -1,7 +1,16 @@
 package com.example.lsc.perrerampal;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.net.Uri;
+import android.provider.Settings;
+import android.support.annotation.RequiresPermission;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -16,13 +25,17 @@ import android.widget.Toast;
 
 public class ReporteActivity extends ActionBarActivity {
 
-    //Declaraciones
+    //Declaraciones del XML
     String opc;
     Button enviarBtn, borrarBtn, gpsBtn;
     TextView msgTV;
     EditText campo1, campo2, campo3, campo4;
     Spinner spn;
     ArrayAdapter<CharSequence> adapter;
+
+    //Declaraciones datos reporte
+    String gpsUser, locProvider;
+    int contClick = 0;
 
     //Funciones:
     void camposVisibles(){ //Activa la edición de los campos EditText y hace visibles los Hints.msg
@@ -88,7 +101,89 @@ public class ReporteActivity extends ActionBarActivity {
 
     //Procedimiento para cuando el usuario quiere usar su ubicación actual.
     protected void obtenerUbicación(){
+        final LocationManager ubicacion = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        LocationListener ubicacionListener = new LocationListener() {
+            @Override
+            public void onLocationChanged(Location location) { //Este retorna las coordenadas de la ubicación
+                gpsUser = location.toString();
+            }
+
+            @Override
+            public void onStatusChanged(String s, int i, Bundle bundle) { //Este indica qué método obtuvo ubicación (GPS 1 o 2)
+                locProvider = s + " " + i;
+            }
+
+            @Override
+            public void onProviderEnabled(String s) { //Indica si el proovedor de servicio está activado
+                campo4.setText(s);
+            }
+
+            @Override
+            public void onProviderDisabled(String s) { //O si no lo está.
+                mandarUsuarioActivarGPS();
+            }
+        };
+        //Atributos: Proveedor, tiempo de refrescado (milisegundos), distancia para refrescar (si se aleja de esta) (en metros) y listener.
+        ubicacion.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0, ubicacionListener); //A veces muestra error, ignorar.
     }
+
+
+
+
+    //Procedimiento para realizar la llamada al 072
+    public void esLlamada()
+    {
+        Intent llamaInt = new Intent(Intent.ACTION_CALL, Uri.parse("tel:072"));
+        startActivity(llamaInt); //A veces muestra error, ignorar.
+    }
+
+    //¿Es Urgencia? Lo primero que sale al llegar a este activity.
+    public void esUrgenciaDialog()
+    {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(ReporteActivity.this);
+        builder.setTitle("¿Es una emergencia?").setMessage("Si lo prefiere puede levantar el reporte por llamada telefónica");
+        builder.setPositiveButton("Hacer llamada", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) { //Hay un onClick para cada uno para establecer qué hacer para cada botón
+                // Código para el onClick del Cancelar
+                esLlamada();
+            }
+        });
+        builder.setNegativeButton("Llenar manualmente", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // Código para el onClick del Hacer llamada
+
+            }
+        });
+        //Paso 4: Crear la alerta con la información que ya le dimos y ordenarle que la muestre
+        builder.create();
+        builder.show();
+    }
+
+    protected void mandarUsuarioActivarGPS()
+    {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(ReporteActivity.this);
+        builder.setTitle(R.string.activGPS).setMessage(R.string.descrpGPSStr);
+        builder.setPositiveButton("Ir a activarlos", new DialogInterface.OnClickListener() { //Hay un onClick para cada uno para establecer qué hacer para cada botón
+            public void onClick(DialogInterface dialog, int id) {
+                // Código para el onClick del "ir a activarlos"
+                Intent i = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                startActivity(i);
+            }
+        });
+        builder.setNegativeButton("Llenar manualmente", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // Código para el onClick del "Llenar manualmente"
+                campo1.setFocusable(false);
+                campo1.setHint(R.string.lugRepHint);
+                itallicDesactivado();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +196,7 @@ public class ReporteActivity extends ActionBarActivity {
         gpsBtn = (Button) findViewById(R.id.ubicacionBtn);
         msgTV = (TextView) findViewById(R.id.selecReporteTV);
         campo1 = (EditText) findViewById(R.id.lugarRepEditText); campo2 = (EditText) findViewById(R.id.descripcionRepEditText);
-                campo3 = (EditText) findViewById(R.id.nombreRepEditText); campo4 = (EditText) findViewById(R.id.telContactoEditText);
+        campo3 = (EditText) findViewById(R.id.nombreRepEditText); campo4 = (EditText) findViewById(R.id.telContactoEditText);
         spn = (Spinner) findViewById(R.id.reportSpinner);
         adapter = (ArrayAdapter<CharSequence>) ArrayAdapter.createFromResource(this, R.array.reportesArray,
                 android.R.layout.simple_spinner_item);
@@ -109,51 +204,48 @@ public class ReporteActivity extends ActionBarActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spn.setAdapter(adapter);
 
+        int i = 0;
+
+        esUrgenciaDialog();
         camposNoVisibles();
+
 
         //Spinner y sus elementos
         spn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 opc = (String) spn.getSelectedItem();
-                msgTV.setText(opc + " (opción " + Integer.toString(i) + ")");
+                msgTV.setText(opc); //Por añadir R.string.genRep
                 switch(i){ //int i nos indica qué opción ha sido seleccionada y acorde se ha implementado el switch.
                     case 0:
-                            camposNoVisibles();
+                        camposNoVisibles();
                         break;
 
                     case 1:
-                        Toast.makeText(getApplicationContext(), "Reporte de perro agresor", Toast.LENGTH_SHORT).show();
-                            camposVisibles();
+                        camposVisibles();
                         break;
 
                     case 2:
-                        Toast.makeText(getApplicationContext(), "Reporte de perro abandonado", Toast.LENGTH_SHORT).show();
-                            camposVisibles();
+                        camposVisibles();
                         break;
 
                     case 3:
-                        Toast.makeText(getApplicationContext(), "Reporte de perro perdido", Toast.LENGTH_SHORT).show();
-                            camposVisibles();
+                        camposVisibles();
                         break;
 
                     case 4:
-                        Toast.makeText(getApplicationContext(), "Reporte de perro en situación de calle", Toast.LENGTH_SHORT).show();
-                            camposVisibles();
+                        camposVisibles();
                         break;
 
                     case 5:
-                        Toast.makeText(getApplicationContext(), "Reporte de perro enfermo", Toast.LENGTH_SHORT).show();
-                            camposVisibles();
+                        camposVisibles();
                         break;
 
                     case 6:
-                        Toast.makeText(getApplicationContext(), "Reporte de cadaver", Toast.LENGTH_SHORT).show();
-                            camposVisibles();
+                        camposVisibles();
                         break;
                     case 7:
-                        Toast.makeText(getApplicationContext(), "Reporte de maltrato animal", Toast.LENGTH_SHORT).show();
-                            camposVisibles();
+                        camposVisibles();
                         break;
                 }
 
@@ -169,13 +261,20 @@ public class ReporteActivity extends ActionBarActivity {
                 gpsBtn.setOnClickListener(new View.OnClickListener() { //Evento del botón "GPS"
                     @Override
                     public void onClick(View view) {
-                        //Obtener ubicación actual
-
-
-                        Toast.makeText(getApplicationContext(), "Obteniendo ubicación actual", Toast.LENGTH_SHORT).show();
-                        itallicActivado();
-                        campo1.setHint(getString(R.string.gpsStr));
-                        campo1.setFocusable(false); //Una vez seleccionado, no se puede editar el campo de la ubicación.
+                        contClick++;
+                        if (contClick % 2 != 0) { //Al primer click, determinado por el residuo de (contClick/2), se activa el GPS
+                            //Obtener ubicación actual
+                            obtenerUbicación();
+                            Toast.makeText(getApplicationContext(), "Obteniendo ubicación actual", Toast.LENGTH_SHORT).show();
+                            itallicActivado();
+                            campo1.setHint(getString(R.string.gpsStr));
+                            campo1.setFocusable(false); //Una vez seleccionado, no se puede editar el campo de la ubicación.
+                        }
+                        else { //Al segundo click se desactiva GPS.
+                            itallicDesactivado();
+                            campo1.setFocusable(true);
+                            campo1.setHint(R.string.lugRepHint);
+                        }
                     }
                 });
 

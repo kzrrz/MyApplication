@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LayoutAbout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lsc.perrerampal.About">
+
+
+    <TextView
+        android:id="@+id/textViewTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/imageView4"
+        android:text="@string/SplashText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/colorBlanco"
+        android:textStyle="bold|italic"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo_morelia_morado"
+        android:layout_below="@+id/textViewTop"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textViewabout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewabout2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp"
+        android:text="@string/about1Str"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textViewabout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewabout3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp"
+        android:text="@string/about2Str"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textViewabout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about3Str"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="14sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="75dp" />
+
+    <TextView
+        android:id="@+id/textViewLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:text="@string/about4Str"
+        android:textAlignment="center"
+        android:textColor="@color/primario"
+        android:textSize="24sp"
+        android:textStyle="bold|italic" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo_color"
+        android:layout_above="@+id/imageView"
+        android:layout_alignRight="@+id/imageView4"
+        android:layout_alignEnd="@+id/imageView4" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo_unla"
+        android:layout_above="@+id/textViewLink"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

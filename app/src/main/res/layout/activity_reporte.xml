@@ -44,10 +44,10 @@
         android:textAppearance="@android:style/TextAppearance.Holo.Medium.Inverse"
         android:textColor="@color/colorBlanco"
         android:textColorHint="@color/colorBlanco"
-        android:layout_above="@+id/descripcionRepEditText"
+        android:layout_below="@+id/reportSpinner"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginTop="45dp" />
 
     <EditText
         android:id="@+id/descripcionRepEditText"
@@ -60,10 +60,10 @@
         android:textAppearance="@android:style/TextAppearance.Holo.Medium.Inverse"
         android:textColor="@color/colorBlanco"
         android:textColorHint="@color/colorBlanco"
-        android:layout_marginBottom="36dp"
-        android:layout_above="@+id/nombreRepEditText"
+        android:layout_below="@+id/lugarRepEditText"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="32dp" />
 
     <EditText
         android:id="@+id/nombreRepEditText"
@@ -76,10 +76,10 @@
         android:textAppearance="@android:style/TextAppearance.Holo.Medium.Inverse"
         android:textColor="@color/colorBlanco"
         android:textColorHint="@color/colorBlanco"
-        android:layout_marginBottom="39dp"
-        android:layout_above="@+id/telContactoEditText"
+        android:layout_below="@+id/descripcionRepEditText"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp" />
 
     <EditText
         android:id="@+id/telContactoEditText"
@@ -92,10 +92,10 @@
         android:textAppearance="@android:style/TextAppearance.Holo.Medium.Inverse"
         android:textColor="@color/colorBlanco"
         android:textColorHint="@color/colorBlanco"
-        android:layout_above="@+id/envioReporteBtn"
+        android:layout_marginBottom="59dp"
+        android:layout_above="@+id/borrarBtn"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="33dp" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/ubicacionBtn"
@@ -104,9 +104,6 @@
         android:textSize="12sp"
         android:text="@string/ubicActual"
         android:layout_alignBottom="@+id/lugarRepEditText"
-        android:layout_toRightOf="@+id/lugarRepEditText"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -115,7 +112,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/sendRep"
-        android:layout_above="@+id/borrarBtn"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -124,7 +121,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/borrarStr"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/envioReporteBtn"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

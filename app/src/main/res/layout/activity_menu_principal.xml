@@ -86,4 +86,17 @@
         android:layout_below="@+id/BienvenidaTxt"
         android:layout_centerHorizontal="true" />
 
+    <TextView
+        android:id="@+id/aboutTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listaAdopBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:onClick="aboutOnClick"
+        android:text="@string/aboutStr"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/claroColor" />
+
 </RelativeLayout>
