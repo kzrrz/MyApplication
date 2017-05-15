@@ -133,7 +133,8 @@ public class ReporteActivity extends ActionBarActivity {
     //Procedimiento para realizar la llamada al 072
     public void esLlamada()
     {
-        Intent llamaInt = new Intent(Intent.ACTION_CALL, Uri.parse("tel:072"));
+        Intent llamaInt = new Intent(Intent.ACTION_CALL);
+        llamaInt.setData(Uri.parse("tel:072"));
         startActivity(llamaInt); //A veces muestra error, ignorar.
     }
 
